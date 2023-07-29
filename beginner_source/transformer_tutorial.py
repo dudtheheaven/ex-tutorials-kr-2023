@@ -1,15 +1,14 @@
 """
-Language Modeling with ``nn.Transformer`` and torchtext
+``nn.Transformer`` 및 토치 텍스트를 사용한 언어 모델링
 ===============================================================
 
-This is a tutorial on training a model to predict the next word in a sequence using the
-`nn.Transformer <https://pytorch.org/docs/stable/generated/torch.nn.Transformer.html>`__ module.
+이 튜토리얼은 `nn.Transformer <https://pytorch.org/docs/stable/generated/torch.nn.Transformer.html>`__ 모듈을 사용하여
+시퀀스에서 다음 단어를 예측하는 모델을 훈련하는 방법에 대한 튜토리얼입니다.
 
-The PyTorch 1.2 release includes a standard transformer module based on the
-paper `Attention is All You Need <https://arxiv.org/pdf/1706.03762.pdf>`__.
-Compared to Recurrent Neural Networks (RNNs), the transformer model has proven
-to be superior in quality for many sequence-to-sequence tasks while being more
-parallelizable. The ``nn.Transformer`` module relies entirely on an attention
+파이토치 1.2는 `Attention is All You Need <https://arxiv.org/pdf/1706.03762.pdf>`__ 에 기반한 표준 트랜스포머 모듈을 포함하고 있습니다.
+트랜스포머 모델은 순환신경만(RNN)과 비교를 했을 때,
+병렬처리가 가능하면서도 많은 S2S 작업에서 품질이 더 우수하다는 것이 입증되었습니다.
+The ``nn.Transformer`` module relies entirely on an attention
 mechanism (implemented as
 `nn.MultiheadAttention <https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html>`__)
 to draw global dependencies between input and output. The ``nn.Transformer``
