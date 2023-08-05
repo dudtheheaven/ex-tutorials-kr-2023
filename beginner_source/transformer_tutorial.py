@@ -2,19 +2,20 @@
 ``nn.Transformer`` 및 토치 텍스트를 사용한 언어 모델링
 ===============================================================
 
-이 튜토리얼은 `nn.Transformer <https://pytorch.org/docs/stable/generated/torch.nn.Transformer.html>`__ 모듈을 사용하여
+`nn.Transformer <https://pytorch.org0/docs/stable/generated/torch.nn.Transformer.html>`__ 모듈을 사용하여
 시퀀스에서 다음 단어를 예측하는 모델을 훈련하는 방법에 대한 튜토리얼입니다.
 
 파이토치 1.2는 `Attention is All You Need <https://arxiv.org/pdf/1706.03762.pdf>`__ 에 기반한 표준 트랜스포머 모듈을 포함하고 있습니다.
-트랜스포머 모델은 순환신경망(RNN)과 비교를 했을 때,
-병렬처리가 가능하면서도 많은 시퀀스-투-시퀀스 작업에서 품질이 더 우수하다는 것이 입증되었습니다.
-The ``nn.Transformer`` module relies entirely on an attention
-mechanism (implemented as
-`nn.MultiheadAttention <https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html>`__)
-to draw global dependencies between input and output. The ``nn.Transformer``
-module is highly modularized such that a single component (e.g.,
-`nn.TransformerEncoder <https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html>`__)
-can be easily adapted/composed.
+트랜스포머 모델은 순환 신경망과 비교를 했을 때,
+병렬처리가 가능하면서도 많은 S2S 작업에서 품질이 더 우수하다는 것이 입증되었습니다.
+
+``nn.Transformer`` 모듈은 어텐션(attention) 메커니즘 
+(`nn.MultiheadAttention <https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html>`__ 로 구현됨.)에 
+전적으로 의존하여 입력과 출력 간의 전역 종속성(global dependencies)을 도출합니다.
+
+``nn.Transformer`` 모듈은 고도로 모듈화되어 있어 단일 컴포넌트 
+(예, `nn.TransformerEncoder <https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html>`__ )를
+쉽게 조정/구성할 수 있습니다.
 
 .. image:: ../_static/img/transformer_architecture.jpg
 
